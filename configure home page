@@ -7,7 +7,7 @@
   tasks:
     - name: Copy Index.html
       copy:
-        src: template/index.html
+        src: templates/index.html
         dest: /var/www/html/index.html
         owner: root
         group: root
@@ -15,7 +15,7 @@
         
     - name: Copy Ansible image file
       copy:
-        src: template/red-hat-ansible.svg
+        src: templates/red-hat-ansible.svg
         dest: /var/www/html/red-hat-ansible.svg
         owner: root
         group: root

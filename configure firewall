@@ -1,5 +1,5 @@
 ---
-- name: Start Apache Only
+- name: Configure Firewall Only
   hosts: demogroup
   gather_facts: true
   become: true

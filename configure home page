@@ -1,0 +1,22 @@
+---
+- name: Configure Home Only
+  hosts: demogroup
+  gather_facts: true
+  become: true
+  
+  tasks:
+    - name: Copy Index.html
+      copy:
+        src: template/index.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
+        
+    - name: Copy Ansible image file
+      copy:
+        src: template/red-hat-ansible.svg
+        dest: /var/www/html/red-hat-ansible.svg
+        owner: root
+        group: root
+        mode: '0644'

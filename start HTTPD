@@ -1,0 +1,12 @@
+---
+- name: Start Apache Only
+  hosts: demogroup
+  gather_facts: true
+  become: true
+  
+  tasks:
+    - name: Starting HTTPD - TASK
+      service:
+        name: httpd
+        state: started
+        enabled: yes

@@ -1,0 +1,18 @@
+---
+- name: Install Apache Only
+  hosts: demogroup
+  gather_facts: true
+  become: true
+  
+  tasks:
+    - name: Install httpd - TASK
+      yum:
+        name: httpd
+        state: latest
+      notify: Restart HTTPD - HANDLER
+  
+  handlers:
+    - name: Restart HTTPD - HANDLER
+      service: 
+        name: httpd
+        state: restarted

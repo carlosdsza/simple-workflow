@@ -3,6 +3,8 @@
   hosts: demogroup
   gather_facts: true
   become: true
+  vars:
+    my_motd_string: Is the default!
   
   tasks:
     - name: Template Custom MOTD

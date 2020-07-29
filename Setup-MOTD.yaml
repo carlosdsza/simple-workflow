@@ -7,7 +7,7 @@
   tasks:
     - name: Copy Custom MOTD
       copy:
-        src: templates/MOTD.j2
+        src: templates/testmotd.j2
         dest: /etc/motd
         owner: root
         group: root

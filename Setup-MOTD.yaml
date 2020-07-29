@@ -1,0 +1,14 @@
+---
+- name: Configure MOTD
+  hosts: demogroup
+  gather_facts: true
+  become: true
+  
+  tasks:
+    - name: Copy Custom MOTD
+      copy:
+        src: templates/MOTD.j2
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: '0644'

@@ -7,4 +7,7 @@
 
 New MOTD on {{ ansible_fqdn }}!
 
-{{ my_motd_string }}
+{% if my_motd_string %}    TODAY'S MESSAGE {{ my_motd_string }}
+############################################
+{% endif %}
+

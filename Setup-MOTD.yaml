@@ -5,8 +5,8 @@
   become: true
   
   tasks:
-    - name: Copy Custom MOTD
-      copy:
+    - name: Template Custom MOTD
+      template:
         src: templates/testmotd.j2
         dest: /etc/motd
         owner: root

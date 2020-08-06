@@ -1,6 +1,6 @@
 ---
 - name: Configure MOTD
-  hosts: demogroup
+  hosts: all
   gather_facts: true
   become: true
   vars:

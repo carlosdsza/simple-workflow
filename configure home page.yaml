@@ -7,7 +7,7 @@
   tasks:
     - name: Copy Index.html
       copy:
-        src: templates/index.html.j2
+        src: templates/indexhtml.j2
         dest: /var/www/html/index.html
         owner: root
         group: root

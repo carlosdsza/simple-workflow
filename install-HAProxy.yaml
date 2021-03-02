@@ -10,6 +10,14 @@
         name: haproxy
         state: latest
       notify: Restart HAProxy - HANDLER
+
+    - name: Source HAProxy cfg
+      copy:
+        src: templates/haproxy.cfg.j2
+        dest: /etc/haproxy/haproxy.cfg
+        owner: root
+        group: root
+        mode: '0644'
   
   handlers:
     - name: Restart HAProxy - HANDLER

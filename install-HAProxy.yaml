@@ -12,7 +12,7 @@
       notify: Restart HAProxy - HANDLER
 
     - name: Source HAProxy cfg
-      copy:
+      template:
         src: templates/haproxy.cfg.j2
         dest: /etc/haproxy/haproxy.cfg
         owner: root

@@ -1,6 +1,6 @@
 ---
 - name: Start Apache Only
-  hosts: demogroup
+  hosts: webservers
   gather_facts: true
   become: true
   

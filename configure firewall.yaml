@@ -1,6 +1,6 @@
 ---
 - name: Configure Firewall Only
-  hosts: demogroup
+  hosts: webservers,haproxy
   gather_facts: true
   become: true
   

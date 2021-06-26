@@ -5,6 +5,13 @@
   become: true
   
   tasks:
+
+    - name: Install firewalld
+      yum:
+        name: firewalld
+        state: latest
+      notify: Restart firewalld
+
     - name: Allow port 80 through the firewall
       firewalld:
        service: http

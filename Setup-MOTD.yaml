@@ -4,7 +4,7 @@
   gather_facts: true
   become: true
   vars:
-    my_motd_string: Is the default!
+    my_motd_string: Today is a gerat Demo Day !!!
   
   tasks:
     - name: Template Custom MOTD

@@ -1,0 +1,37 @@
+---
+- name: Playbook Name - Install and start apache webhook-test
+  hosts: webservers
+  gather_facts: true
+
+  tasks:
+    - name: Install httpd and firewalld
+      yum:
+        name: 
+          - httpd
+          - firewalld
+        state: latest
+      notify: Restart HTTPD
+
+    - name: Starting HTTPD
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Allow port 80 through the firewall
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+      notify: Restart firewalld
+
+  handlers:
+    - name: Restart HTTPD
+      service: 
+        name: httpd
+        state: restarted
+
+    - name: Restart firewalld
+      service:
+        name: firewalld
+        state: restarted

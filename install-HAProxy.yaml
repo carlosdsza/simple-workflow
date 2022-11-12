@@ -9,7 +9,12 @@
       yum:
         name: haproxy
         state: latest
-      notify: Restart HAProxy - HANDLER
+
+    - name: Start and enable HAProxy
+      service:
+        name: haproxy
+        state: started
+        enabled: true
 
     - name: Source HAProxy cfg
       template:

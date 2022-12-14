@@ -15,7 +15,7 @@
         
     - name: Copy Ansible image file
       copy:
-        src: templates/red-hat-ansible.svg
+        src: templates/ansible-demo_adobe_express.svg
         dest: /var/www/html/red-hat-ansible.svg
         owner: root
         group: root

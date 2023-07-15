@@ -36,6 +36,6 @@ frontend main
 backend app
 	balance	roundrobin
 
-	{% for host in groups['webservers'] %}
-		server {{ host }}_internal {{ host }}:8 check
- 	{% endfor %}
+{% for host in groups['webservers'] %}
+server {{ host }}_internal {{ host }}:80 check
+{% endfor %}

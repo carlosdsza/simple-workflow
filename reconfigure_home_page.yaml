@@ -1,6 +1,6 @@
 ---
 - name: Configure Home Only
-  hosts: aap-node4.test.local
+  hosts: aap-node1.test.local
   gather_facts: true
   become: true
   

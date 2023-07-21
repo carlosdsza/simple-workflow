@@ -1,0 +1,22 @@
+---
+- name: Configure Home Only
+  hosts: aap-node4
+  gather_facts: true
+  become: true
+  
+  tasks:
+    - name: Copy Index.html
+      template:
+        src: templates/indexhtml.j2
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
+        
+    - name: Copy Ansible image file
+      copy:
+        src: templates/red-hat-ansible.svg
+        dest: /var/www/html/red-hat-ansible.svg
+        owner: root
+        group: root
+        mode: '0644'

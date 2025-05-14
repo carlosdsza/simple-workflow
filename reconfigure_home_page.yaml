@@ -3,20 +3,24 @@
   hosts: webservers
   gather_facts: true
   become: true
-  
   tasks:
     - name: Copy Index.html
-      template:
+      ansible.builtin.template:
         src: templates/indexhtml.j2
         dest: /var/www/html/index.html
         owner: root
         group: root
         mode: '0644'
-        
     - name: Copy Ansible image file
-      copy:
+      ansible.builtin.copy:
         src: templates/red-hat-ansible.svg
         dest: /var/www/html/red-hat-ansible.svg
         owner: root
         group: root
         mode: '0644'
+
+    - name: Starting HTTPD - TASK
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
